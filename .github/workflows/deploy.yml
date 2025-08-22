@@ -1,4 +1,4 @@
-name: Build and Deploy Jekyll (minimal)
+name: Deploy Jekyll site to Pages
 
 on:
   push:
@@ -19,18 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
-      - name: Install & Build
-        run: |
-          bundle config set path vendor/bundle
-          bundle install --jobs 4 --retry 3
-          bundle exec jekyll build --trace
+          source: ./
+          destination: ./_site
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: ./_site
 
   deploy:
     needs: build
