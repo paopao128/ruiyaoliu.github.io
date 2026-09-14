@@ -306,7 +306,34 @@
             transform-origin: left;
             z-index: 1001;
             transition: transform 0.3s ease;
+        }        .news-item.award-highlight {
+            background: rgba(255, 90, 95, 0.045);
+            border-left: 3px solid #ff5a5f;
+            padding-left: 17px;
         }
+
+        .news-item.award-highlight:hover {
+            background: rgba(255, 90, 95, 0.075);
+        }
+
+        .news-item.award-highlight .conference {
+            color: #ff666b;
+        }
+
+        .award-label {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 1px 7px;
+            border: 1px solid rgba(255, 102, 107, 0.65);
+            border-radius: 2px;
+            color: #ff666b;
+            font-size: 0.68em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            vertical-align: 1px;
+        }
+
+
 
         /* Monochrome theme */
         body {
@@ -423,7 +450,7 @@
             color: #ff3b3b !important;
             text-shadow: none !important;
         }
-    </style>
+    
 </head>
 <body>
     <div class="scroll-indicator" id="scrollIndicator"></div>
@@ -549,7 +576,7 @@
                       text-shadow: 
                         0 0 5px #ff8080;
                     }
-                    </style>
+                    
 
 
 
